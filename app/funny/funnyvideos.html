@@ -1,8 +1,29 @@
 <div ng-controller='funnyvideos'>
 <h2>Funny Videos</h2>
-<h4><a href="" ng-click="updateSearch('funny pranks')">Prank Videos</a>   <a href="" ng-click="updateSearch('fail videos')">Fail Videos</a>   <a href="" ng-click="updateSearch('funny shocking videos')">Shocking Videos</a>   <a href="" ng-click="updateSearch('funny dog videos')">Dog Videos</a>   <a href="" ng-click="updateSearch('funny cat videos')">Cat Videos</a>   <a href="" ng-click="updateSearch('funny stupid videos')">Stupid Videos</a></h4>
+<!-- <h4><a href="" ng-click="updateSearch('funny pranks')">Prank Videos</a>   <a href="" ng-click="updateSearch('fail videos')">Fail Videos</a>   <a href="" ng-click="updateSearch('funny shocking videos')">Shocking Videos</a>   <a href="" ng-click="updateSearch('funny dog videos')">Dog Videos</a>   <a href="" ng-click="updateSearch('funny cat videos')">Cat Videos</a>   <a href="" ng-click="updateSearch('funny stupid videos')">Stupid Videos</a></h4>
 <h4><a href="" ng-click="updateSearch('funny movie clips')">Movie Clips</a>   <a href="" ng-click="updateSearch('funny disaster videos')">Disaster Videos</a>   <a href="" ng-click="updateSearch('funny accidents')">Funny Accidents</a></h4>
+<h5>Sort by:      <a href="" ng-click="viewCount()">Most Viewed</a>   <a href="" ng-click="highestRated()">Highest Rated</a>   <a href="" ng-click="newest()">Newest</a></h5> -->
+
+
+<div style="float:right;padding-right:50px">
 <h5>Sort by:      <a href="" ng-click="viewCount()">Most Viewed</a>   <a href="" ng-click="highestRated()">Highest Rated</a>   <a href="" ng-click="newest()">Newest</a></h5>
+ <table border="1px" cellpadding="5px" width="300" height="100">
+    <tr>
+     <th>Categories</th>
+    </tr>
+    <tr>
+    <td ng-click="updateSearch('funny pranks')">Prank Videos</tr>
+    <td ng-click="updateSearch('fail videos')">Fail Videos</tr>
+    <td ng-click="updateSearch('funny shocking videos')">Shocking Videos</tr>
+    <td ng-click="updateSearch('funny dog videos')">Dog Videos</tr>
+    <td ng-click="updateSearch('funny cat videos')">Cat Videos</tr>
+    <td ng-click="updateSearch('funny stupid videos')">Stupid Videos</tr>
+    <td ng-click="updateSearch('funny movie clips')">Movie Clips Videos</tr>
+    <td ng-click="updateSearch('funny disaster videos')">Disaster Videos</tr>
+    <td ng-click="updateSearch('funny accidents')">Funny Accidents</tr>
+    </tr>
+  </table>
+</div>
 
 <div ng-repeat="video in videos">
     <iframe id="ytplayer" type="text/html" width="540" height="280" ng-src="{{ video.id.videoId | youtubeEmbedUrl }}" frameborder="0" allowfullscreen></iframe>
