@@ -33,8 +33,7 @@ app.get('/api/jokes', function(req, res) {
 app.post('/api/jokes', function(req, res) {
 
   var text = req.body.line;
-
-  if (req.session.user === undefined) {
+  var user = req.session.user || 'anonymous';
 
     db.Joke.findOne({line: text})
     .then(function(line) {
@@ -42,7 +41,7 @@ app.post('/api/jokes', function(req, res) {
 
         var newJoke = new db.Joke({
           line: text,
-          by: 'anonymous',
+          by: user,
           likes: 0,
           dislikes: 0
         });
@@ -54,7 +53,6 @@ app.post('/api/jokes', function(req, res) {
 
       }
     });
-  }
 
 });
 
@@ -67,6 +65,29 @@ app.get('/api/photos', function(req, res) {
 
 app.post('/api/photos', function(req, res) {
 
+var currT = req.body.title;
+var url = req.body.url;
+var user = req.session.user || 'anonymous';
+
+    db.Photo.findOne({title: currT})
+    .then(function(title) {
+      if (!title) {
+
+        var newPhoto = new db.Photo({
+          title: currT,
+          url: url,
+          likes: 0,
+          dislikes: 0,
+          comments: []
+        });
+
+        newPhoto.save().then(function(newPhoto) {
+          console.log(newPhoto);
+          res.status(200).send(newPhoto);
+        });
+
+      }
+    });
 
 });
 
