@@ -12,7 +12,7 @@
   right: 0;
  }
 </script> -->
-  <div style="float:right">
+  <div style="float:right;padding-right:50px">
   <br>
     <form>
      Search: <input placeholder='Enter search query' ng-model='liveSearch'>
@@ -61,8 +61,8 @@
   <div style="position:absolute;bottom:0;left:250px;top:350px;right:0;"><img style="width:120px" src="https://media.giphy.com/media/cPO6DKCQiyqPK/giphy.gif"></div> -->
 
   <div style="float:left">
-  <img src="{{ current.url }}" height="350px">
-  <br>{{ current.title }}
+  <img src="{{ current.url }}" width="520px">
+  <br><b>Title:</b> {{ current.title }}
 <!--   <select ng-model='currRate'
           ng-change='rater(currRate)'
           data-ng-options='rate as rate for rate in rating'>
@@ -71,7 +71,8 @@
   <br><br>
 
    <form name="imageForm" ng-submit="addPhoto()">
-    Image Link: <input type="url" name="url" placeholder="Image Link" ng-model="submit.url"> Image Title: <input type="text" placeholder="Image Title" ng-model="submit.title"> <button type="submit">Save Photo</button>
+   Upload Image<br>
+   Link: <input type="url" name="url" placeholder="Image Link" ng-model="submit.url"> Image Title: <input type="text" placeholder="Image Title" ng-model="submit.title"> <button type="submit">Save Photo</button>
     </form>
 <!--   <img width="20px" height="20px" src="https://cdn2.iconfinder.com/data/icons/32pxmania/misc_58.png">
   <img width="20px" height="20px" src="https://cdn2.iconfinder.com/data/icons/32pxmania/misc_58.png">

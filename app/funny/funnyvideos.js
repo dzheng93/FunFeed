@@ -30,7 +30,7 @@ angular.module('funapp.funnyvideos', [])
   });
   }
 
-  $scope.current = 'prank videos';
+  $scope.current = 'funny pranks';
   $scope.sorting = 'viewCount';
 
   $scope.viewCount = function() {

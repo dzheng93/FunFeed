@@ -182,4 +182,15 @@
 
 body {
   background-color: #e6e6e6;
+  font: 100 15px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.logo {
+  letter-spacing: .4px;
+  line-height: 44px;
+  padding: 0px 0 0 0;
+  text-transform: uppercase;
+  font: 100 40px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 100;
 }
