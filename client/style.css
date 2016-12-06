@@ -227,3 +227,7 @@ tr:nth-child(even) td { background: #F1F1F1; }
 tr:nth-child(odd) td { background: #FEFEFE; }
 
 tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}

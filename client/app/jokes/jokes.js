@@ -20,8 +20,16 @@ angular.module('funapp.jokes', [])
   $scope.fetch();
 
   $scope.addJoke = function() {
-    $scope.jokes.push(this.submit);
-    this.submit = '';
+    $http({
+      method: 'POST',
+      url: 'http://127.0.0.1:3000/api/jokes',
+      data: {line: this.submit.line}
+    })
+    .then(function(response) {
+      $scope.fetch();
+      this.submit = '';
+    })
+    // $scope.jokes.push(this.submit);
   }
 
     $scope.like = function() {

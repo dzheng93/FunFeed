@@ -34,7 +34,7 @@
   <br><br>
   Comments:
     <p ng-repeat='each in current.comments'>
-    {{each.user}}: {{each.text}}
+    <b>{{each.user}}</b>: {{each.text}}
     </p>
     <form name="commentForm" ng-submit="addComment()">
     Comment: <input type="text" placeholder="Enter comment here.." ng-model="comment.text"> <button type="submit">Submit</button>

@@ -35,4 +35,9 @@ exports.Photo = mongoose.model('Photo', photoSchema);
 //   dislikes: 2
 // });
 
+// var test = new exports.Photo({title: 'President', url: 'https://4.bp.blogspot.com/-cBxHid0d9ok/WCQXho0MI1I/AAAAAAAAVT8/eiBsisiKbpsFT0qYqPB6jtXnrsMOIG2tgCLcB/s1600/what-does-the-president-do.jpg', likes: 5, dislikes: 0, comments: [
+//     {text: 'hilary ftw', user: 'clinton'},
+//     {text: 'i knew it haha', user: 'obama'},
+//     ]});
+
 // test.save();
