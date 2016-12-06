@@ -1,0 +1,28 @@
+{
+  "name": "fundb",
+  "version": "1.0.0",
+  "description": "nonstop fun",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzheng93/hrsf50-mvp.git"
+  },
+  "author": "Dunstan Zheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dzheng93/hrsf50-mvp/issues"
+  },
+  "homepage": "https://github.com/dzheng93/hrsf50-mvp#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "mongoose": "^4.7.1",
+    "nodemon": "^1.11.0"
+  }
+}
