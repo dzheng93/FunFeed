@@ -1,0 +1,82 @@
+<div ng-controller='funnyphotos'>
+<!-- <script type="text/css">
+.containerdiv {
+  border: 0;
+  float: left;
+  position: relative;
+}
+.cornerimage {
+  border: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+ }
+</script> -->
+  <div style="float:right">
+  <table border="1px" cellpadding="5px" width="300" height="100">
+    <tr>
+     <th>Funny Images</th>
+    </tr>
+    <tr ng-repeat="pic in photos" ng-click='click()'>
+      <td>{{ pic.title }}</td>
+    </tr>
+  </table>
+  <br>
+    <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-up-128.png" style="width:30px">
+  {{ current.like }}
+  <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-down-128.png" style="width:30px">
+  {{ current.dislike }}
+  <br><br>
+  Comments:
+
+<span ng-repeat="pic in photos">
+    <tr ng-repeat = "each in pic.comments">
+        <td> {{each.user}} </td>
+        <td> {{each.text}} </td>
+    </tr>
+</span>
+
+
+  </div>
+  <br>
+  <select ng-model='selectedPicture'
+          ng-change='select(selectedPicture)'
+          data-ng-options='photo as photo.rating for photo in photos'>
+  </select>
+  <br>
+  <br>
+
+<!--   <table border="1px" cellpadding="5px" width="300" height="100">
+    <tr>
+     <th>Favorites</th>
+    </tr>
+    <tr ng-repeat="pic in photos" ng-if="pic.rating >= 4" ng-click='click()'>
+      <td>{{ pic.title }}</td>
+    </tr>
+  </table> -->
+
+<!--   <img style="position:relative" src="{{ current.url }}" height="350px">
+  <div style="position:absolute;bottom:0;left:250px;top:350px;right:0;"><img style="width:120px" src="https://media.giphy.com/media/cPO6DKCQiyqPK/giphy.gif"></div> -->
+
+  <div style="float:left">
+  <img src="{{ current.url }}" height="350px">
+  <br>{{ current.title }}
+  <select ng-model='currRate'
+          ng-change='rater(currRate)'
+          data-ng-options='rate as rate for rate in rating'>
+  <option value="">Change Photo Rating</option>
+  </select>
+  <br>
+
+   <form name="imageForm" ng-submit="addPhoto()">
+    Image Link: <input type="url" name="url" placeholder="Image Link" ng-model="submit.url"> Image Title: <input type="text" placeholder="Image Title" ng-model="submit.title"> <button type="submit">Save Photo</button>
+    </form>
+<!--   <img width="20px" height="20px" src="https://cdn2.iconfinder.com/data/icons/32pxmania/misc_58.png">
+  <img width="20px" height="20px" src="https://cdn2.iconfinder.com/data/icons/32pxmania/misc_58.png">
+  <img width="20px" height="20px" src="https://cdn2.iconfinder.com/data/icons/32pxmania/misc_58.png">
+  <img width="20px" height="20px" src="https://cdn2.iconfinder.com/data/icons/32pxmania/misc_58.png">
+  <img width="20px" height="20px" src="https://cdn2.iconfinder.com/data/icons/32pxmania/misc_58.png"> -->
+
+  </div>
+
+  </div>

@@ -1,0 +1,13 @@
+<div controller="funapp.jokes">
+  <h1>Jokes</h1>
+  <p ng-repeat="joke in jokes">
+  {{ joke.line }}<br>
+  <small>Submitted by: {{joke.by}}</small>
+  </p>
+
+  <div>
+  <form name="jokeForm" ng-submit="addJoke()">
+    Submit: <input placeholder="Enter joke here.." ng-model="submit.line"> <button type="submit">Save Joke</button>
+    </form>
+  </div>
+</div>

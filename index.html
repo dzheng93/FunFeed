@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="app/jokes/jokes.js"></script>
+    <script src="app/funny/funnyphotos.js"></script>
+    <script src="app/funny/funnyvideos.js"></script>
+    <script src="app/cats/randomcats.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+    <title>FunDB - Jokes, Funny photos, and Random cats!</title>
+  </head>
+<body>
+<h1>FunDB</h1>
+   <div ng-app="funapp">
+      <nav>
+        <a href="#/index">HOME</a>
+        <a href="#/jokes">JOKES</a>
+        <a href="#/funnyphotos">FUNNY PHOTOS</a>
+        <a href="#/funnyvideos">FUNNY VIDEOS</a>
+        <a href="#/randomcats">RANDOM CATS</a>
+      </nav>
+      <div ng-view></div>
+    </div>
+</body>
+</html>
