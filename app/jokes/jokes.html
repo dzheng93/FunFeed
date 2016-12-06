@@ -1,8 +1,13 @@
 <div controller="funapp.jokes">
   <h1>Jokes</h1>
-  <p ng-repeat="joke in jokes">
+  Search: <input placeholder='Enter search query' ng-model='liveSearch'>
+  <p ng-repeat="joke in jokes | orderBy: '-likes' | filter:liveSearch">
   {{ joke.line }}<br>
   <small>Submitted by: {{joke.by}}</small>
+  <img ng-click="like()" src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-up-128.png" style="width:13px">
+     {{ joke.likes }}
+  <img ng-model="status2" ng-click="dislike()" src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-down-128.png" style="width:13px">
+     {{ joke.dislikes }}
   </p>
 
   <div>

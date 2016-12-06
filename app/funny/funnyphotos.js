@@ -16,6 +16,12 @@ angular.module('funapp.funnyphotos', [])
 
   $scope.current = $scope.photos[0];
 
+  // $scope.ratio = function() {
+  //   $scope.currLikes = ($scope.current.likes / $scope.current.dislikes);
+  // }
+
+  // $scope.ratio();
+
   $scope.click = function() {
     console.log(this);
     $scope.current = this.pic;
@@ -37,10 +43,12 @@ angular.module('funapp.funnyphotos', [])
 
   $scope.like = function() {
     this.current.likes++;
+    // $scope.ratio();
   }
 
   $scope.dislike = function() {
     this.current.dislikes++;
+    // $scope.ratio();
   }
 
   $scope.addComment = function() {
