@@ -9,17 +9,20 @@
     <script src="app/funny/funnyvideos.js"></script>
     <script src="app/cats/randomcats.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>FunDB - Jokes, Funny photos, and Random cats!</title>
   </head>
 <body>
 <h1>FunDB</h1>
    <div ng-app="funapp">
-      <nav>
-        <a href="#/index">HOME</a>
-        <a href="#/jokes">JOKES</a>
-        <a href="#/funnyphotos">FUNNY PHOTOS</a>
-        <a href="#/funnyvideos">FUNNY VIDEOS</a>
-        <a href="#/randomcats">RANDOM CATS</a>
+      <nav id="cssmenu">
+      <ul>
+        <li><a href="#/index">HOME</a></li>
+        <li><a href="#/jokes">JOKES</a></li>
+        <li><a href="#/funnyphotos">FUNNY PHOTOS</a></li>
+        <li><a href="#/funnyvideos">FUNNY VIDEOS</a></li>
+        <li><a href="#/randomcats">RANDOM CATS</a></li>
+        </ul>
       </nav>
       <div ng-view></div>
     </div>

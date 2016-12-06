@@ -13,36 +13,38 @@
  }
 </script> -->
   <div style="float:right">
+  <br>
+    <form>
+     Search: <input placeholder='Enter search query' ng-model='liveSearch'>
+    </form>
+    <br>
   <table border="1px" cellpadding="5px" width="300" height="100">
     <tr>
-     <th>Funny Images</th>
+     <th>Top Funny Images</th>
     </tr>
-    <tr ng-repeat="pic in photos" ng-click='click()'>
+    <tr ng-repeat="pic in photos | orderBy:'-likes' | filter:liveSearch" ng-click='click()'>
       <td>{{ pic.title }}</td>
     </tr>
   </table>
   <br>
-    <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-up-128.png" style="width:30px">
-  {{ current.like }}
-  <img src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-down-128.png" style="width:30px">
-  {{ current.dislike }}
+    <img ng-click="like()" src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-up-128.png" style="width:30px">
+  {{ current.likes }}
+  <img ng-model="status2" ng-click="dislike()" src="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/arrow-down-128.png" style="width:30px">
+  {{ current.dislikes }}
   <br><br>
   Comments:
-
-<span ng-repeat="pic in photos">
-    <tr ng-repeat = "each in pic.comments">
-        <td> {{each.user}} </td>
-        <td> {{each.text}} </td>
-    </tr>
-</span>
-
-
+    <p ng-repeat='each in current.comments'>
+    {{each.user}}: {{each.text}}
+    </p>
+    <form name="commentForm" ng-submit="addComment()">
+    Comment: <input type="text" placeholder="Enter comment here.." ng-model="comment.text"> <button type="submit">Submit</button>
+    </form>
   </div>
   <br>
-  <select ng-model='selectedPicture'
+<!--   <select ng-model='selectedPicture'
           ng-change='select(selectedPicture)'
           data-ng-options='photo as photo.rating for photo in photos'>
-  </select>
+  </select> -->
   <br>
   <br>
 
@@ -61,12 +63,12 @@
   <div style="float:left">
   <img src="{{ current.url }}" height="350px">
   <br>{{ current.title }}
-  <select ng-model='currRate'
+<!--   <select ng-model='currRate'
           ng-change='rater(currRate)'
           data-ng-options='rate as rate for rate in rating'>
-  <option value="">Change Photo Rating</option>
+  <option value="">Change Photo Rating</option> -->
   </select>
-  <br>
+  <br><br>
 
    <form name="imageForm" ng-submit="addPhoto()">
     Image Link: <input type="url" name="url" placeholder="Image Link" ng-model="submit.url"> Image Title: <input type="text" placeholder="Image Title" ng-model="submit.title"> <button type="submit">Save Photo</button>
