@@ -1,5 +1,5 @@
 angular.module('funapp.jokes', [])
-.controller('jokes', function($scope, $http) {
+.controller('jokes', function($scope, $http, $rootScope) {
 
   $scope.fetch = function() {
     $http({

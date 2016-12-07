@@ -8,6 +8,7 @@
     <script src="app/funny/funnyphotos.js"></script>
     <script src="app/funny/funnyvideos.js"></script>
     <script src="app/cats/randomcats.js"></script>
+    <script src="app/auth/auth.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -16,7 +17,7 @@
   </head>
 <body>
 <h1 class="logo">FunDB</h1>
-   <div ng-app="funapp">
+   <div ng-app="funapp" ng-controller="nav">
       <nav id="cssmenu">
       <ul>
         <li><a href="#/index">HOME</a></li>
@@ -24,6 +25,8 @@
         <li><a href="#/funnyphotos">FUNNY PHOTOS</a></li>
         <li><a href="#/funnyvideos">FUNNY VIDEOS</a></li>
         <li><a href="#/randomcats">RANDOM CATS</a></li>
+        <li><a href="#/signin">{{rootStatus}}</a></li>
+<!--         <li><a href="#/signin">{{rootStatus2}}</a></li> -->
         </ul>
       </nav>
       <div ng-view></div>

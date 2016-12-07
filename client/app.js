@@ -5,7 +5,7 @@ angular.module('funapp', [
   'funapp.funnyphotos',
   'funapp.randomcats',
   'funapp.funnyvideos',
-  // 'funapp.signin',
+  'funapp.auth',
   // 'funapp.signout',
   'ngSanitize'
   ])
@@ -30,11 +30,24 @@ angular.module('funapp', [
       .when('/funnyvideos', {
         templateUrl: 'app/funny/funnyvideos.html',
         controller: 'funnyvideos'
-      });
+      })
+      .when('/signin', {
+        templateUrl: 'app/auth/signin.html',
+        controller: 'auth'
+      })
+      .when('/signup', {
+        templateUrl: 'app/auth/signup.html',
+        controller: 'auth'
+      })
       // .otherwise({
       //   redirectTo: '/index'
       // })
 })
   .service('test', function() {
+
+  })
+  .controller('nav', function($scope, $rootScope) {
+
+    $rootScope.rootStatus = 'SIGN IN';
 
   })

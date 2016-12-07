@@ -49,7 +49,8 @@ angular.module('funapp.funnyphotos', [])
               $scope.current = response.data[i];
             }
           }
-          this.submit = '';
+          $scope.submit.title = '';
+          $scope.submit.url = '';
         });
     })
     // console.log(this);
