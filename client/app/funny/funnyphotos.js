@@ -1,5 +1,5 @@
 angular.module('funapp.funnyphotos', [])
-.controller('funnyphotos', function($scope, $http) {
+.controller('funnyphotos', function($scope, $http, $rootScope) {
   $scope.photos = [];
 
   $scope.fetch = function() {
@@ -72,7 +72,7 @@ angular.module('funapp.funnyphotos', [])
     $http({
       method: 'POST',
       url: 'http://127.0.0.1:3000/api/photos/comments',
-      data: {title: this.current.title, comment: this.comment.text}
+      data: {title: this.current.title, comment: this.comment.text, currUser: $rootScope.thisUser}
     })
       .then(function(response) {
         $http({

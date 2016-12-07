@@ -14,10 +14,11 @@ angular.module('funapp.jokes', [])
   $scope.fetch();
 
   $scope.addJoke = function() {
+    console.log($rootScope.thisUser);
     $http({
       method: 'POST',
       url: 'http://127.0.0.1:3000/api/jokes',
-      data: {line: this.submit.line}
+      data: {line: this.submit.line, currUser: $rootScope.thisUser}
     })
     .then(function(response) {
       $scope.fetch();

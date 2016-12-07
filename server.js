@@ -31,9 +31,9 @@ app.get('/api/jokes', function(req, res) {
 });
 
 app.post('/api/jokes', function(req, res) {
-
+console.log(req.body);
   var text = req.body.line;
-  var user = req.session.user || 'anonymous';
+  var user = req.body.currUser || 'anonymous';
 
     db.Joke.findOne({line: text})
     .then(function(line) {
@@ -67,7 +67,7 @@ app.post('/api/photos', function(req, res) {
 
 var currT = req.body.title;
 var url = req.body.url;
-var user = req.session.user || 'anonymous';
+var user = req.body.currUser || 'anonymous';
 
     db.Photo.findOne({title: currT})
     .then(function(title) {
@@ -93,7 +93,7 @@ var user = req.session.user || 'anonymous';
 
 app.post('/api/photos/comments', function(req, res) {
   var title = req.body.title;
-  var user = req.session.user || 'anonymous';
+  var user = req.body.currUser || 'anonymous';
   var message = {text: req.body.comment, user: user}
 
   db.Photo.findOneAndUpdate({title: title}, {$push: {comments: message}})
